@@ -1,5 +1,5 @@
 local placeScripts = {
-    [17574618959] = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn'),true))(), -- syntax reborn just a baseplate
+    [17574618959] = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn'),true))(), -- just a baseplate
     [placeid] = comingsoon,
     [placeid] = comingsoon,
     [placeid] = comingsoon,

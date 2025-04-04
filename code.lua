@@ -1,6 +1,6 @@
 local placeScripts = {
     [17574618959] = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn'),true))(), -- just a baseplate
-    [placeid] = comingsoon,
+    [18668065416] = loadstring(game:HttpGet(('https://pastebin.pl/view/raw/c495deb0'),true))(), -- blue lock rivals
     [placeid] = comingsoon,
     [placeid] = comingsoon,
     [placeid] = comingsoon

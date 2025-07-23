@@ -16,7 +16,7 @@ local scripts = {
     end, -- fisch
 
     [129827112113663] = function()
-        print("Coming Soon...")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prospecting.lua", true))()
     end, -- prospecting
 
     [999999999] = function()

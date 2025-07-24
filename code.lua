@@ -1,3 +1,7 @@
+print("need a cheap executor?")
+print("get misery now!")
+print("https://getmisery.cc")
+
 local scripts = {
     [17574618959] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn"))()
@@ -35,3 +39,36 @@ if scripts[placeId] then
 else
     game.Players.LocalPlayer:Kick("❌ Unsupported game. No script available for this PlaceId: " .. placeId)
 end
+
+getgenv().name = "-> https://getmisery.cc <-"
+
+
+local Plr = game.Players.LocalPlayer
+for Index, Value in next, game:GetDescendants() do 
+    if Value.ClassName == "TextLabel" then 
+        local has = string.find(Value.Text,Plr.Name) 
+        if has then 
+            local str = Value.Text:gsub(Plr.Name,name)
+            Value.Text = str 
+        end
+        Value:GetPropertyChangedSignal("Text"):Connect(function()
+            local str = Value.Text:gsub(Plr.Name,name)
+            Value.Text = str 
+        end)
+    end
+end
+
+game.DescendantAdded:Connect(function(Value)
+    if Value.ClassName == "TextLabel" then 
+        local has = string.find(Value.Text,Plr.Name)
+        Value:GetPropertyChangedSignal("Text"):Connect(function()
+            local str = Value.Text:gsub(Plr.Name,name)
+            Value.Text = str 
+        end)
+        if has then 
+            local str = Value.Text:gsub(Plr.Name,name)
+            Value.Text = str 
+        end
+        
+    end
+end)

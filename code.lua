@@ -19,6 +19,10 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prospecting.lua", true))()
     end, -- prospecting
 
+    [76455837887178] = function()
+        loadstring(game:HttpGet("https://init.frostbyte.lol"))()
+    end, -- Dig It
+
     [999999999] = function()
         print("Coming soon")
     end,

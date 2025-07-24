@@ -20,7 +20,7 @@ local scripts = {
     end, -- prospecting
 
     [76455837887178] = function()
-        loadstring(game:HttpGet("https://init.frostbyte.lol"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CupPink/scripts/main/Loader.lua"))()
     end, -- Dig It
 
     [999999999] = function()

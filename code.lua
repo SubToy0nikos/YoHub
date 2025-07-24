@@ -34,6 +34,10 @@ local scripts = {
     [999999999] = function()
         print("Coming soon")
     end,
+    
+        [18667984660] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CaseohCASEOH/aabbaaii/refs/heads/main/SCRIPTT"))()
+    end,
 }
 
 local placeId = game.PlaceId

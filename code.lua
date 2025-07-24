@@ -32,12 +32,12 @@ local scripts = {
     end, -- abyss miner
 
     [91232956735357] = function()
-        loadstring(game:HttpGet("https://gitlab.com/RobloxiaUntilDawn/robloxia-until-dawn/-/raw/main/script"))()
+        loadstring(game:HttpGet("https://gitlab.com/RobloxiaUntilDawn/robloxia-until-dawn/-/raw/main/Loader?ref_type=heads"))()
     end, -- my pet rock
     
         [18667984660] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CaseohCASEOH/aabbaaii/refs/heads/main/SCRIPTT"))()
-    end,
+    end, -- flex your ping and fps
 }
 
 local placeId = game.PlaceId

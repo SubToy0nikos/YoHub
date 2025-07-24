@@ -28,7 +28,7 @@ local scripts = {
     end, -- Dig It
 
     [17126500142] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/notyourfavorite1/lomuhubmain/refs/heads/main/mainV2.5.lua"))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Xse6Vadu"))()
     end, -- abyss miner
 
     [999999999] = function()

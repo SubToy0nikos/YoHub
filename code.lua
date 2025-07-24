@@ -27,6 +27,10 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CupPink/scripts/main/Loader.lua"))()
     end, -- Dig It
 
+    [17126500142] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/notyourfavorite1/lomuhubmain/refs/heads/main/mainV2.5.lua"))()
+    end,
+
     [999999999] = function()
         print("Coming soon")
     end,

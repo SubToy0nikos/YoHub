@@ -29,7 +29,7 @@ local scripts = {
 
     [17126500142] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/notyourfavorite1/lomuhubmain/refs/heads/main/mainV2.5.lua"))()
-    end,
+    end, -- abyss miner
 
     [999999999] = function()
         print("Coming soon")

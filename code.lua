@@ -31,8 +31,8 @@ local scripts = {
         loadstring(game:HttpGet("https://pastebin.com/raw/Xse6Vadu"))()
     end, -- abyss miner
 
-    [999999999] = function()
-        print("Coming soon")
+    [91232956735357] = function()
+        loadstring(game:HttpGet("https://gitlab.com/RobloxiaUntilDawn/robloxia-until-dawn/-/raw/main/script"))()
     end,
     
         [18667984660] = function()

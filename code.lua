@@ -38,6 +38,10 @@ local scripts = {
         [18667984660] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CaseohCASEOH/aabbaaii/refs/heads/main/SCRIPTT"))()
     end, -- flex your ping and fps
+
+        [119031451367172] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/studsimulator.lua"))()
+    end, -- stud simulator
 }
 
 local placeId = game.PlaceId

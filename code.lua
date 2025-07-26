@@ -50,7 +50,10 @@ local scripts = {
         [2753915549] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
     end, -- blox fruits
-        
+
+        [109983668079237] = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Steal-a-brainrot/refs/heads/main/Steal-a-Brainrot'))()
+    end, -- steal a brainrot
 }
 
 local placeId = game.PlaceId

@@ -46,6 +46,10 @@ local scripts = {
         [107892466314467] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/growacryptofarm.lua"))()
     end, -- grow a crypto farm
+
+        [2753915549] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
+    end, -- blox fruits
         
 }
 

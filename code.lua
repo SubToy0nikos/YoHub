@@ -42,6 +42,11 @@ local scripts = {
         [119031451367172] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/studsimulator.lua"))()
     end, -- stud simulator
+
+        [107892466314467] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/growacryptofarm.lua"))()
+    end, -- grow a crypto farm
+        
 }
 
 local placeId = game.PlaceId

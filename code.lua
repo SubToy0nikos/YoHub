@@ -60,7 +60,7 @@ local scripts = {
     end, -- Container RNG
 
         [79546208627805] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Black69Weed-dev/99-Night-in-the-forest/main/99%20nights%20in%20the%20forest.lua"))()
     end, -- 99 nights in the forest
 }
 

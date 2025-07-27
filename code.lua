@@ -54,6 +54,10 @@ local scripts = {
         [109983668079237] = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/m00ndiety/Steal-a-brainrot/refs/heads/main/Steal-a-Brainrot'))()
     end, -- steal a brainrot
+
+        [79657240466394] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/agreed69-scripts/open-src-scripts/refs/heads/main/Container%20RNG.lua",true))()
+    end, -- Container RNG
 }
 
 local placeId = game.PlaceId

@@ -58,6 +58,10 @@ local scripts = {
         [79657240466394] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/agreed69-scripts/open-src-scripts/refs/heads/main/Container%20RNG.lua",true))()
     end, -- Container RNG
+
+        [79546208627805] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader.lua", true))()
+    end, -- 99 nights in the forest
 }
 
 local placeId = game.PlaceId

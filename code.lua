@@ -130,7 +130,7 @@ local scripts = {
     end, -- every step you get older
 
         [119055906651998] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Moligrafi001/Hallow-Hub/main/Loader.lua",true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Moligrafi001/Triangulare/main/Loader.lua"))()
     end, -- fast food simulator
         
 }

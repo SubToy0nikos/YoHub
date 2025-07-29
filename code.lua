@@ -117,6 +117,10 @@ local scripts = {
         [662417684] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/KaizerQuasar/Project-Quasar/main/Lucky-Lucky.lua"))()
     end,
+
+        [86584030422286] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prisonline.lua"))()
+    end,
 }
 
 local placeId = game.PlaceId

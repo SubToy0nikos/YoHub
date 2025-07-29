@@ -64,7 +64,7 @@ local scripts = {
     end, -- 99 nights in the forest
 
         [11156779721] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/qxkya/Kya-Ware/main/TheSurvivalGame.lua"))() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     end, -- the survival game
 }
 

@@ -106,9 +106,14 @@ local scripts = {
         loadstring(game:HttpGet("https://ashlabs.me/api/game?name=Cut-Grass.lua", true))()
     end, -- cut grass
 
-        [16159871483] = function
+        [16159871483] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/buckshotmayhem.lua", true))()
-    end,
+    end, -- buckshot mayhem
+
+        [5991163185] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/spraypaint.lua", true))()
+    end, -- spary paint
+    
 }
 
 local placeId = game.PlaceId

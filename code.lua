@@ -113,7 +113,10 @@ local scripts = {
         [5991163185] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/spraypaint.lua", true))()
     end, -- spary paint
-    
+
+        [662417684] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KaizerQuasar/Project-Quasar/main/Lucky-Lucky.lua"))()
+    end,
 }
 
 local placeId = game.PlaceId

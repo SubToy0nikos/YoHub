@@ -1,3 +1,6 @@
+-- send a message for me to know if you're cheating :3
+game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("....")
+
 -- find exploit (xeno, etc) and list it as UserExploit
 local UserExploit = identifyexecutor()
 

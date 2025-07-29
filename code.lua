@@ -136,6 +136,10 @@ local scripts = {
         [80399355300227] = function()
         loadstring(game:HttpGet("https://gist.githubusercontent.com/ScriptsForDays/91678a587ab894f341bb4e47296bf030/raw/c90b1b4f8c25aadae75e8d7611bc7701416fa59d/UPD2-SEIZE"))()
     end, -- S.E.I.Z.E
+
+        [13822889] = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))()
+    end, -- lumber tycoon 2
         
 }
 

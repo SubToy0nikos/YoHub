@@ -66,6 +66,10 @@ local scripts = {
         [11156779721] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     end, -- the survival game
+
+        [6872265039] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    end, -- bedwars
 }
 
 local placeId = game.PlaceId

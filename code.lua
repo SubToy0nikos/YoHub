@@ -101,6 +101,14 @@ local scripts = {
         [6872265039] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     end, -- bedwars
+
+        [103889808775700] = function()
+        loadstring(game:HttpGet("https://ashlabs.me/api/game?name=Cut-Grass.lua", true))()
+    end, -- cut grass
+
+        [16159871483] = function
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/buckshotmayhem.lua", true))()
+    end,
 }
 
 local placeId = game.PlaceId

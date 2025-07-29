@@ -65,7 +65,7 @@ local scripts = {
 
         [11156779721] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/qxkya/Kya-Ware/main/TheSurvivalGame.lua"))() 
-    end,
+    end, -- the survival game
 }
 
 local placeId = game.PlaceId

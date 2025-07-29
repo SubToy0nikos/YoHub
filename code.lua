@@ -128,6 +128,10 @@ local scripts = {
         [83516970175863] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/everystepyougetolder.lua", true))()
     end, -- every step you get older
+
+        [119055906651998] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Moligrafi001/Hallow-Hub/main/Loader.lua",true))()
+    end, -- fast food simulator
         
 }
 

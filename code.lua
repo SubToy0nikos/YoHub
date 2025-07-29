@@ -54,7 +54,7 @@ local scripts = {
     end, -- fisch
 
     [129827112113663] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prospecting.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/Prospecting"))()
     end, -- prospecting
 
     [76455837887178] = function()

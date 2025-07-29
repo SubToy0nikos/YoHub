@@ -153,35 +153,43 @@ end
 
 -- change da name
 
-getgenv().name = "-> https://getmisery.cc <-"
+-- Escape special rich text characters
+local function escapeRichText(str)
+    return str
+        :gsub("&", "&amp;")
+        :gsub("<", "&lt;")
+        :gsub(">", "&gt;")
+end
 
+-- Set the escaped global replacement name
+getgenv().name = escapeRichText("-> https://getmisery.cc <-")
 
 local Plr = game.Players.LocalPlayer
-for Index, Value in next, game:GetDescendants() do 
-    if Value.ClassName == "TextLabel" then 
-        local has = string.find(Value.Text,Plr.Name) 
-        if has then 
-            local str = Value.Text:gsub(Plr.Name,name)
-            Value.Text = str 
+local playerName = Plr.Name
+local replacement = getgenv().name
+
+local function replaceName(label)
+    if label.Text:find(playerName) then
+        label.Text = label.Text:gsub(playerName, replacement)
+    end
+
+    label:GetPropertyChangedSignal("Text"):Connect(function()
+        if label.Text:find(playerName) then
+            label.Text = label.Text:gsub(playerName, replacement)
         end
-        Value:GetPropertyChangedSignal("Text"):Connect(function()
-            local str = Value.Text:gsub(Plr.Name,name)
-            Value.Text = str 
-        end)
+    end)
+end
+
+for _, obj in ipairs(game:GetDescendants()) do
+    if obj:IsA("TextLabel") then
+        obj.RichText = true
+        replaceName(obj)
     end
 end
 
-game.DescendantAdded:Connect(function(Value)
-    if Value.ClassName == "TextLabel" then 
-        local has = string.find(Value.Text,Plr.Name)
-        Value:GetPropertyChangedSignal("Text"):Connect(function()
-            local str = Value.Text:gsub(Plr.Name,name)
-            Value.Text = str 
-        end)
-        if has then 
-            local str = Value.Text:gsub(Plr.Name,name)
-            Value.Text = str 
-        end
-        
+game.DescendantAdded:Connect(function(obj)
+    if obj:IsA("TextLabel") then
+        obj.RichText = true
+        replaceName(obj)
     end
 end)

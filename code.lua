@@ -132,6 +132,10 @@ local scripts = {
         [119055906651998] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Moligrafi001/Triangulare/main/Loader.lua"))()
     end, -- fast food simulator
+
+        [80399355300227] = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/ScriptsForDays/91678a587ab894f341bb4e47296bf030/raw/c90b1b4f8c25aadae75e8d7611bc7701416fa59d/UPD2-SEIZE"))()
+    end, -- S.E.I.Z.E
         
 }
 

@@ -62,6 +62,10 @@ local scripts = {
         [79546208627805] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader.lua", true))()
     end, -- 99 nights in the forest
+
+        [11156779721] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/qxkya/Kya-Ware/main/TheSurvivalGame.lua"))() 
+    end,
 }
 
 local placeId = game.PlaceId

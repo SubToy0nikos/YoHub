@@ -1,4 +1,7 @@
+-- find exploit (xeno, etc) and list it as UserExploit
 local UserExploit = identifyexecutor()
+
+-- say script is loading
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 Title = "Script loading...",
@@ -7,6 +10,8 @@ Duration = 5
 })
 
 wait(7)
+
+-- say who made the script
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
 Title = "Script Loaded Sucessfully",
@@ -17,12 +22,16 @@ Button2 = "Yes Mommy",
 Duration = 30 
 })
 
+-- #AD for misery please buy :3
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 print("Why use " .. tostring(UserExploit))
-print("Get the best & cheapest executor")
-print("get misery now!")
+print("Get the best & cheapest executor #AD")
+print("get misery now! #AD")
 print("https://getmisery.cc")
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
+-- scripts
 
 local scripts = {
     [17574618959] = function()
@@ -101,6 +110,8 @@ if scripts[placeId] then
 else
     game.Players.LocalPlayer:Kick("❌ Unsupported game. No script available for this PlaceId: " .. placeId)
 end
+
+-- change da name
 
 getgenv().name = "-> https://getmisery.cc <-"
 

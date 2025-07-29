@@ -108,3 +108,12 @@ game.DescendantAdded:Connect(function(Value)
         
     end
 end)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script Loaded Sucessfully",
+Text = "Made by YOnikosYT & BlushyFemboy", 
+
+Button1 = "Yes Daddy",
+Button2 = "Yes Mommy",
+Duration = 30 
+})

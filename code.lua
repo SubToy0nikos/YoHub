@@ -1,6 +1,28 @@
-print("need a cheap executor?")
+local UserExploit = identifyexecutor()
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script loading...",
+Text = "Loading on " .. tostring(UserExploit),
+Duration = 5 
+})
+
+wait(7)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+Title = "Script Loaded Sucessfully",
+Text = "Made by YOnikosYT & BlushyFemboy", 
+
+Button1 = "Yes Daddy",
+Button2 = "Yes Mommy",
+Duration = 30 
+})
+
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+print("Why use " .. tostring(UserExploit))
+print("Get the best & cheapest executor")
 print("get misery now!")
 print("https://getmisery.cc")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
 local scripts = {
     [17574618959] = function()
@@ -112,12 +134,3 @@ game.DescendantAdded:Connect(function(Value)
         
     end
 end)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Script Loaded Sucessfully",
-Text = "Made by YOnikosYT & BlushyFemboy", 
-
-Button1 = "Yes Daddy",
-Button2 = "Yes Mommy",
-Duration = 30 
-})

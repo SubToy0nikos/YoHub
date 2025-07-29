@@ -120,7 +120,12 @@ local scripts = {
 
         [86584030422286] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prisonline.lua"))()
-    end,
+    end, -- prison line
+
+        [83516970175863] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/everystepyougetolder.lua", true))()
+    end, -- every step you get older
+        
 }
 
 local placeId = game.PlaceId

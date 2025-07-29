@@ -140,6 +140,10 @@ local scripts = {
         [13822889] = function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))()
     end, -- lumber tycoon 2
+
+        [11708967881] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/YeetAFriend"))()
+    end, -- yeet a friend
         
 }
 

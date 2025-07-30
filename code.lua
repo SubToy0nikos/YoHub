@@ -153,6 +153,10 @@ local scripts = {
         [11708967881] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/YeetAFriend"))()
     end, -- yeet a friend
+
+        [4872321990] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/islands.lua",true))()
+    end, -- Islands
         
 }
 

@@ -34,6 +34,11 @@ print("get misery now! #AD")
 print("https://getmisery.cc")
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
+if tostring(UserExploit):lower() == "Misery" then
+    print("Real")
+end
+
+
 -- scripts
 
 local scripts = {
@@ -165,35 +170,36 @@ local function escapeRichText(str)
         :gsub(">", "&gt;")
 end
 
--- Set the escaped global replacement name
-getgenv().name = escapeRichText("-> https://getmisery.cc <-")
+if tostring(UserExploit):lower() ~= "Misery" then
+    getgenv().name = escapeRichText("-> https://getmisery.cc <-")
 
-local Plr = game.Players.LocalPlayer
-local playerName = Plr.Name
-local replacement = getgenv().name
+    local Plr = game.Players.LocalPlayer
+    local playerName = Plr.Name
+    local replacement = getgenv().name
 
-local function replaceName(label)
-    if label.Text:find(playerName) then
-        label.Text = label.Text:gsub(playerName, replacement)
-    end
-
-    label:GetPropertyChangedSignal("Text"):Connect(function()
+    local function replaceName(label)
         if label.Text:find(playerName) then
             label.Text = label.Text:gsub(playerName, replacement)
         end
+
+        label:GetPropertyChangedSignal("Text"):Connect(function()
+            if label.Text:find(playerName) then
+                label.Text = label.Text:gsub(playerName, replacement)
+            end
+        end)
+    end
+
+    for _, obj in ipairs(game:GetDescendants()) do
+        if obj:IsA("TextLabel") then
+            obj.RichText = true
+            replaceName(obj)
+        end
+    end
+
+    game.DescendantAdded:Connect(function(obj)
+        if obj:IsA("TextLabel") then
+            obj.RichText = true
+            replaceName(obj)
+        end
     end)
 end
-
-for _, obj in ipairs(game:GetDescendants()) do
-    if obj:IsA("TextLabel") then
-        obj.RichText = true
-        replaceName(obj)
-    end
-end
-
-game.DescendantAdded:Connect(function(obj)
-    if obj:IsA("TextLabel") then
-        obj.RichText = true
-        replaceName(obj)
-    end
-end)

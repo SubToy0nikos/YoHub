@@ -34,7 +34,7 @@ print("get misery now! #AD")
 print("https://getmisery.cc")
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
-if tostring(UserExploit):lower() == "Misery" then
+if tostring(UserExploit) ~= "Misery" then
     print("Real")
 end
 

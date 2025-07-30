@@ -31,15 +31,29 @@ end)
 -- if using misery then send Real
 if tostring(UserExploit) == "Misery" then
     print("Real")
-else -- Else
-    -- Please Buy Misery its worth it :3 #AD
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-    print("Why use " .. tostring(UserExploit))
-    print("Get the best & cheapest executor #AD")
-    print("get misery now! #AD")
-    print("https://getmisery.cc")
-    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+else
+    -- #AD
+    -- PLEASE BUY MISERY ITS THE CHEAPEST & BEST EXECUTOR #AD
+    local function printAd()
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+        print("Why use " .. tostring(UserExploit))
+        print("Get the best & cheapest executor #AD")
+        print("get misery now! #AD")
+        print("https://getmisery.cc")
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    end
+
+    printAd()
+
+    -- send ad every 300 seconds (5 mins)
+    task.spawn(function()
+        while true do
+            wait(300)
+            printAd()
+        end
+    end)
 end
+
 
 
 

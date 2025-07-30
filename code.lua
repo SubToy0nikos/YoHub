@@ -171,6 +171,10 @@ local scripts = {
         [4872321990] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/islands.lua",true))()
     end, -- Islands
+
+        [7305309231] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/TaxiBoss.lua"))()
+    end, -- taxi boss
         
 }
 

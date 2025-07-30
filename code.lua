@@ -1,42 +1,46 @@
--- send a message for me to know if you're cheating :3
-game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("....")
+-- tells me if you're cheating with 4 dots :3
+pcall(function()
+    game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("....")
+end)
 
--- find exploit (xeno, etc) and list it as UserExploit
+-- finds executor
 local UserExploit = identifyexecutor()
 
--- say script is loading
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Script loading...",
-Text = "Loading on " .. tostring(UserExploit),
-Duration = 5 
-})
+-- loading notif
+pcall(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Script loading...",
+        Text = "Loading on " .. tostring(UserExploit),
+        Duration = 5 
+    })
+end)
 
 wait(7)
 
--- say who made the script
+-- show who made the script
+pcall(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Script Loaded Successfully",
+        Text = "Made by YOnikosYT & BlushyFemboy", 
+        Button1 = "Yes Daddy",
+        Button2 = "Yes Mommy",
+        Duration = 30 
+    })
+end)
 
-game:GetService("StarterGui"):SetCore("SendNotification",{
-Title = "Script Loaded Sucessfully",
-Text = "Made by YOnikosYT & BlushyFemboy", 
-
-Button1 = "Yes Daddy",
-Button2 = "Yes Mommy",
-Duration = 30 
-})
-
--- #AD for misery please buy :3
-
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-print("Why use " .. tostring(UserExploit))
-print("Get the best & cheapest executor #AD")
-print("get misery now! #AD")
-print("https://getmisery.cc")
-print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-
-if tostring(UserExploit) ~= "Misery" then
+-- if using misery then send Real
+if tostring(UserExploit) == "Misery" then
     print("Real")
+else -- Else
+    -- Please Buy Misery its worth it :3 #AD
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    print("Why use " .. tostring(UserExploit))
+    print("Get the best & cheapest executor #AD")
+    print("get misery now! #AD")
+    print("https://getmisery.cc")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 end
+
 
 
 -- scripts
@@ -170,7 +174,9 @@ local function escapeRichText(str)
         :gsub(">", "&gt;")
 end
 
-if tostring(UserExploit) ~= "Misery" then
+if tostring(UserExploit) == "Misery" then
+    print("❤️Thanks For Using Misery❤️")
+else
     getgenv().name = escapeRichText("-> https://getmisery.cc <-")
 
     local Plr = game.Players.LocalPlayer

@@ -170,7 +170,7 @@ local function escapeRichText(str)
         :gsub(">", "&gt;")
 end
 
-if tostring(UserExploit):lower() ~= "Misery" then
+if tostring(UserExploit) ~= "Misery" then
     getgenv().name = escapeRichText("-> https://getmisery.cc <-")
 
     local Plr = game.Players.LocalPlayer

@@ -80,6 +80,7 @@ local function onInputBegin(input)
         dragInput = input
         startPos = input.Position
         framePos = frame.Position
+--don't skid this made by yonikos on youtube
 
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
@@ -98,4 +99,9 @@ local function onInputChange(input)
             framePos.Y.Scale, framePos.Y.Offset + delta.Y
         )
     end
-... (6 lines left)
+end
+
+--don't skid this made by yonikos on youtube
+sean.InputBegan:Connect(onInputBegin)
+sean.InputChanged:Connect(onInputChange)
+game:GetService("UserInputService").InputChanged:Connect(onInputChange)

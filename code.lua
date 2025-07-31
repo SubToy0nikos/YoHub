@@ -30,7 +30,7 @@ end)
 
 -- if using misery then send Real
 if tostring(UserExploit) == "Misery" then
-    print("Real")
+    print("❤️A huge thanks from Arman and YOnikosYT❤️")
 else
     -- #AD
     -- PLEASE BUY MISERY ITS THE CHEAPEST & BEST EXECUTOR #AD

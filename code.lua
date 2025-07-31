@@ -118,7 +118,11 @@ local scripts = {
 
         [79546208627805] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/99nightsinforest.lua", true))()
-    end, -- 99 nights in the forest
+    end, -- 99 nights in the forest Hub
+		
+		[126509999114328] = function(parameters)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/99nightsinforest.lua", true))()
+		end, -- 99 nights in the forest GAME
 
         [11156779721] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()

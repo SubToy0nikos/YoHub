@@ -183,6 +183,10 @@ local scripts = {
         [7305309231] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/TaxiBoss.lua"))()
     end, -- taxi boss
+
+	[81440632616906] = function()
+	loadstring(game:HttpGet("https://scripts.yonikos.xyz/webdav/scripts/NullptrCracked.lua"))()
+     end, -- dig to earths core
         
 }
 

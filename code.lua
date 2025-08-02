@@ -5,7 +5,7 @@ local Modules = {
         ["Green"] = "0,255,0", 
         ["Cyan"] = "33, 161, 163",
         ["White"] = "255,255,255",
-		["Pink"] = "255, 102, 153",
+	["Pink"] = "255, 102, 153",
     },
     Services = {
         RunService = game:GetService("RunService"),

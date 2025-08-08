@@ -253,6 +253,10 @@ local scripts = {
 	[81440632616906] = function()
 		loadstring(game:HttpGet("https://scripts.yonikos.xyz/webdav/scripts/NullptrCracked.lua"))()
      end, -- dig to earths core
+
+	[85896571713843] = function()
+		loadstring(game:HttpGet("https://scripts.yonikos.xyz/webdav/scripts/NullptrCracked.lua"))()
+	end, -- BGSI
         
 }
 

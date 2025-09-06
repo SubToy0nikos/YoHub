@@ -261,6 +261,10 @@ local scripts = {
 	[108616176683580] = function()
 		loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\115\99\114\105\112\116\115\46\121\111\110\105\107\111\115\46\120\121\122\47\119\101\98\100\97\118\47\111\98\102\47\72\101\97\118\101\110\76\105\110\101\46\108\117\97"))()
 	end,
+
+	[13822889] = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/DevKron/Kron_Hub/refs/heads/main/version_1.0'))()
+	end,
         
 }
 

@@ -139,7 +139,7 @@ local scripts = {
     end, -- gag
 
     [16732694052] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+        loadstring(game:HttpGet("https://scripts.yonikos.xyz/FischNew.lua", true))()
     end, -- fisch
 
     [129827112113663] = function()

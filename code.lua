@@ -130,6 +130,11 @@ local scripts = {
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Memeboiyot/SyntaxRebornOfficial/main/SyntaxReborn"))()
     end, -- just a baseplate
 
+local scripts = {
+    [17574618959] = function()
+        loadstring(game:HttpGet("https://scripts.yonikos.xyz/scripts/BeeRichMain.lua"))()
+    end, -- Bee Rich MINE
+	
     [18668065416] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/bluelockrivalsscript.lua"))()
     end, -- blue lock MINE

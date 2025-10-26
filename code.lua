@@ -132,7 +132,7 @@ local scripts = {
 
     [18668065416] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/bluelockrivalsscript.lua"))()
-    end, -- blue lock
+    end, -- blue lock MINE
 
     [126884695634066] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
@@ -140,7 +140,7 @@ local scripts = {
 
     [16732694052] = function()
         loadstring(game:HttpGet("https://scripts.yonikos.xyz/FischNew.lua", true))()
-    end, -- fisch
+    end, -- fisch MINE
 
     [129827112113663] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/Prospecting"))()
@@ -164,11 +164,11 @@ local scripts = {
 
         [119031451367172] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/studsimulator.lua"))()
-    end, -- stud simulator
+    end, -- stud simulator MINE
 
         [107892466314467] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/growacryptofarm.lua"))()
-    end, -- grow a crypto farm
+    end, -- grow a crypto farm MINE
 
         [2753915549] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
@@ -188,11 +188,11 @@ local scripts = {
 
         [79546208627805] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/99nightsinforest.lua", true))()
-    end, -- 99 nights in the forest Hub
+    end, -- 99 nights in the forest Hub MINE
 		
 	[126509999114328] = function(parameters)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/99nightsinforest.lua", true))()
-    end, -- 99 nights in the forest GAME
+    end, -- 99 nights in the forest GAME MINE
 
         [11156779721] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
@@ -208,11 +208,11 @@ local scripts = {
 
         [16159871483] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/buckshotmayhem.lua", true))()
-    end, -- buckshot mayhem
+    end, -- buckshot mayhem MINE
 
         [5991163185] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/spraypaint.lua", true))()
-    end, -- spary paint
+    end, -- spary paint MINE
 
         [662417684] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/KaizerQuasar/Project-Quasar/main/Lucky-Lucky.lua"))()
@@ -220,11 +220,11 @@ local scripts = {
 
         [86584030422286] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/prisonline.lua"))()
-    end, -- prison line
+    end, -- prison line MINE
 
         [83516970175863] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/everystepyougetolder.lua", true))()
-    end, -- every step you get older
+    end, -- every step you get older MINE
 
         [119055906651998] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Moligrafi001/Triangulare/main/Loader.lua"))()
@@ -244,11 +244,11 @@ local scripts = {
 
         [4872321990] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/islands.lua",true))()
-    end, -- Islands
+    end, -- Islands MINE
 
         [7305309231] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/TaxiBoss.lua"))()
-    end, -- taxi boss
+    end, -- taxi boss MINE
 
 	[81440632616906] = function()
 		loadstring(game:HttpGet("https://scripts.yonikos.xyz/webdav/scripts/NullptrCracked.lua"))()
@@ -260,7 +260,7 @@ local scripts = {
 
 	[108616176683580] = function()
 		loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\115\99\114\105\112\116\115\46\121\111\110\105\107\111\115\46\120\121\122\47\119\101\98\100\97\118\47\111\98\102\47\72\101\97\118\101\110\76\105\110\101\46\108\117\97"))()
-	end, -- Heaven Line
+	end, -- Heaven Line MINE
 
 	[10449761463] = function ()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Emerson2-creator/Scripts-Roblox/refs/heads/main/TSBLuna.lua"))()

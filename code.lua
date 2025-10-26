@@ -94,6 +94,15 @@ pcall(function()
     })
 end)
 
+pcall(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "WARNING",
+        Text = "some of the scripts weren't supposed to be published soo have fun :3", 
+        Button1 = "Okay!",
+        Duration = 30 
+    })
+end)
+
 -- if using misery then send a thanks msg
 if tostring(UserExploit) == "Misery" then
     print("❤️A huge thanks from Arman and YOnikosYT❤️")

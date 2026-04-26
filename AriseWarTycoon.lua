@@ -109,7 +109,7 @@ end
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Arise Hub - War Tycoon | Made by AriseCheats",
-   LoadingTitle = "AriseCheats - Loading Persistent Config",
+   LoadingTitle = "AriseCheats - WarTycoon",
    ScriptID = "sid_cv1mabsvivxv",
    ConfigurationSaving = { Enabled = false }
 })

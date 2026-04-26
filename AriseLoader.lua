@@ -1,5 +1,5 @@
 local scriptMap = {
-    [4639625707] = "test"--,
+    [4639625707] = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseWarTycoon.lua"--,
 }
 local targetScriptUrl = scriptMap[game.PlaceId]
 if targetScriptUrl then

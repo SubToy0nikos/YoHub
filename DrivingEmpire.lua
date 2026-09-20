@@ -1,4 +1,4 @@
-local SCRIPT_URL = "" -- Paste your raw script URL here once finalized
+local SCRIPT_URL = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/DrivingEmpire.lua?token=GHSAT0AAAAAAEHJNVQRC2FMB6MPCHANTWRU2VP7S3Q" -- Paste your raw script URL here once finalized
 
 -- Global Services
 local Players = game:GetService("Players")

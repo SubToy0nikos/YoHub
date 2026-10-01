@@ -28,6 +28,9 @@ function MemesenseLib.new(options)
 
     local self = setmetatable({}, MemesenseLib)
 
+    -- Dynamic Toggle Key State
+    self.ToggleKey = options.ToggleKey or Enum.KeyCode.K
+
     -- ScreenGui Setup
     local screenGui = Instance.new("ScreenGui")
     screenGui.Name = windowTitle .. "_Gui"
@@ -38,13 +41,13 @@ function MemesenseLib.new(options)
     self.Options = options
     self.Tabs = {}
 
-    -- Handle Key System (Fetch from Raw Link or Local)
+    -- Handle Key System
     if keySystem then
         local verified = self:_initKeySystem(validKeys, keySettings, discordInvite)
         if not verified then return nil end
     end
 
-    -- Main Outer Window
+    -- Main Frame
     local mainFrame = Instance.new("Frame")
     mainFrame.Name = "MainFrame"
     mainFrame.Size = UDim2.new(0, 720, 0, 480)
@@ -68,7 +71,7 @@ function MemesenseLib.new(options)
     topBar.BorderSizePixel = 0
     topBar.Parent = mainFrame
 
-    -- Custom Name / MemeSense Logo
+    -- Custom Logo
     local logoLabel = Instance.new("TextLabel")
     logoLabel.Size = UDim2.new(0, 220, 1, 0)
     logoLabel.Position = UDim2.new(0, 15, 0, 0)
@@ -80,7 +83,7 @@ function MemesenseLib.new(options)
     logoLabel.TextXAlignment = Enum.TextXAlignment.Left
     logoLabel.Parent = topBar
 
-    -- Top Right Controls Area
+    -- Top Right Controls
     local topControls = Instance.new("Frame")
     topControls.Size = UDim2.new(1, -240, 1, 0)
     topControls.Position = UDim2.new(0, 230, 0, 0)
@@ -114,7 +117,7 @@ function MemesenseLib.new(options)
         end)
     end
 
-    -- Sidebar (Left Nav)
+    -- Sidebar
     local sidebar = Instance.new("Frame")
     sidebar.Name = "Sidebar"
     sidebar.Size = UDim2.new(0, 160, 1, -45)
@@ -128,7 +131,7 @@ function MemesenseLib.new(options)
     sidebarList.Padding = UDim.new(0, 2)
     sidebarList.Parent = sidebar
 
-    -- Content Container
+    -- Content Area
     local contentArea = Instance.new("Frame")
     contentArea.Name = "ContentArea"
     contentArea.Size = UDim2.new(1, -165, 1, -50)
@@ -143,6 +146,13 @@ function MemesenseLib.new(options)
 
     self:_makeDraggable(mainFrame, topBar)
 
+    -- Dynamic Menu Key Listener
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if not gameProcessed and input.KeyCode == self.ToggleKey then
+            mainFrame.Visible = not mainFrame.Visible
+        end
+    end)
+
     if options.LoadingTitle then
         self:Notify(options.LoadingTitle, options.LoadingSubtitle or "Loaded successfully!")
     end
@@ -150,7 +160,7 @@ function MemesenseLib.new(options)
     return self
 end
 
--- Key System with Raw URL Fetching Support
+-- Key System
 function MemesenseLib:_initKeySystem(validKeys, keySettings, discordInvite)
     local authenticated = false
     local fetchedKeys = {}
@@ -269,7 +279,7 @@ function MemesenseLib:_initKeySystem(validKeys, keySettings, discordInvite)
     return true
 end
 
--- Rayfield Notification Component
+-- Notifications
 function MemesenseLib:Notify(titleText, contentText)
     local notif = Instance.new("Frame")
     notif.Size = UDim2.new(0, 240, 0, 60)
@@ -337,6 +347,8 @@ end
 
 -- Create Sidebar Tab
 function MemesenseLib:CreateTab(name)
+    local selfLibrary = self
+
     local tabBtn = Instance.new("TextButton")
     tabBtn.Size = UDim2.new(1, 0, 0, 34)
     tabBtn.BackgroundColor3 = Theme.Sidebar
@@ -537,6 +549,62 @@ function MemesenseLib:CreateTab(name)
 
             UserInputService.InputEnded:Connect(function(input)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
+            end)
+        end
+
+        -- Dynamic Interactive Keybind Component (Rayfield Style)
+        function ElementMethods:AddKeybind(label, defaultKey, isMenuToggle, callback)
+            local currentKey = defaultKey or Enum.KeyCode.K
+
+            local keyFrame = Instance.new("Frame")
+            keyFrame.Size = UDim2.new(1, 0, 0, 24)
+            keyFrame.BackgroundTransparency = 1
+            keyFrame.Parent = sectionContainer
+
+            local txt = Instance.new("TextLabel")
+            txt.Size = UDim2.new(0.6, 0, 1, 0)
+            txt.BackgroundTransparency = 1
+            txt.Text = label
+            txt.TextColor3 = Theme.TextMain
+            txt.Font = Enum.Font.GothamSemibold
+            txt.TextSize = 12
+            txt.TextXAlignment = Enum.TextXAlignment.Left
+            txt.Parent = keyFrame
+
+            local keyBtn = Instance.new("TextButton")
+            keyBtn.Size = UDim2.new(0, 70, 0, 20)
+            keyBtn.Position = UDim2.new(1, -70, 0.5, -10)
+            keyBtn.BackgroundColor3 = Theme.ElementBg
+            keyBtn.BorderSizePixel = 0
+            keyBtn.Text = "[" .. currentKey.Name .. "]"
+            keyBtn.TextColor3 = Theme.TextMuted
+            keyBtn.Font = Enum.Font.GothamSemibold
+            keyBtn.TextSize = 11
+            keyBtn.Parent = keyFrame
+
+            local listening = false
+
+            keyBtn.MouseButton1Click:Connect(function()
+                listening = true
+                keyBtn.Text = "[...]"
+                keyBtn.TextColor3 = Theme.AccentRed
+            end)
+
+            UserInputService.InputBegan:Connect(function(input, gameProcessed)
+                if listening and input.UserInputType == Enum.UserInputType.Keyboard then
+                    listening = false
+                    currentKey = input.KeyCode
+                    keyBtn.Text = "[" .. currentKey.Name .. "]"
+                    keyBtn.TextColor3 = Theme.TextMuted
+
+                    -- If designated as menu toggle, dynamically update library state
+                    if isMenuToggle then
+                        selfLibrary.ToggleKey = currentKey
+                        selfLibrary:Notify("Keybind Updated", "Menu toggle key bound to " .. currentKey.Name)
+                    end
+
+                    if callback then callback(currentKey) end
+                end
             end)
         end
 

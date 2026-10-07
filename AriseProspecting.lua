@@ -32,6 +32,9 @@ local Tab = Window:CreateTab("Auto-Farm", 4483362458)
 local collectCords = nil
 local waterCords = nil
 local autoFarmEnabled = false
+local autoSellEnabled = false
+local autoSellWhenFullEnabled = false
+local sellCFrame = CFrame.new(-8.515495300292969, 25.052936553955078, 61.49698257446289)
 
 local function getPanTool()
     local player = game.Players.LocalPlayer
@@ -66,6 +69,40 @@ local function getPanProgress()
     end
     return nil, nil
 end
+
+local function isInventoryFull()
+    local player = game.Players.LocalPlayer
+    local invSpaceObj = player:FindFirstChild("PlayerGui")
+        and player.PlayerGui:FindFirstChild("ToolUI")
+        and player.PlayerGui.ToolUI:FindFirstChild("FillingPan")
+        and player.PlayerGui.ToolUI.FillingPan:FindFirstChild("InventorySpace")
+
+    if invSpaceObj and (invSpaceObj:IsA("TextLabel") or invSpaceObj:IsA("TextBox")) then
+        local text = invSpaceObj.Text
+        local currentStr, maxStr = string.match(text, "([%d%.]+)%s*/%s*([%d%.]+)")
+        
+        if currentStr and maxStr then
+            local currentVal = tonumber(currentStr)
+            local maxVal = tonumber(maxStr)
+            if currentVal and maxVal and currentVal >= maxVal then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+local function performSell()
+    local sellRemote = game:GetService("ReplicatedStorage"):FindFirstChild("Remotes") 
+        and game.ReplicatedStorage.Remotes:FindFirstChild("Shop") 
+        and game.ReplicatedStorage.Remotes.Shop:FindFirstChild("SellAll")
+
+    if sellRemote and sellRemote:IsA("RemoteFunction") then
+        sellRemote:InvokeServer()
+    end
+end
+
+Tab:CreateSection("Auto-farm")
 
 Tab:CreateButton({
    Name = "Set Collect Location",
@@ -121,60 +158,115 @@ Tab:CreateToggle({
                   local HRPRoot = char and char:FindFirstChild("HumanoidRootPart")
 
                   if HRPRoot then
-                      HRPRoot.CFrame = collectCords
-
-                      local panTool = getPanTool()
-                      if panTool then
-                          local collectScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Collect")
-                          if collectScript and collectScript:IsA("RemoteFunction") then
-                              collectScript:InvokeServer(table.unpack({ [1] = 1, [2] = false }))
-                          end
+                      if autoSellWhenFullEnabled and isInventoryFull() then
+                          Rayfield:Notify({
+                             Title = "Inventory Full",
+                             Content = "Teleporting to shop to sell...",
+                             Duration = 3,
+                          })
+                          HRPRoot.CFrame = sellCFrame
+                          task.wait(0.3)
+                          performSell()
+                          task.wait(0.5)
                       end
 
-                      local currentVal, maxVal = getPanProgress()
-                      if currentVal and maxVal and currentVal >= maxVal then
-                          Rayfield:Notify({
-                             Title = "Pan Full",
-                             Content = "Teleporting to water to wash...",
-                             Duration = 2,
-                          })
+                      if autoFarmEnabled then
+                          HRPRoot.CFrame = collectCords
 
-                          HRPRoot.CFrame = waterCords
-                          task.wait(0.2)
-
-                          panTool = getPanTool()
+                          local panTool = getPanTool()
                           if panTool then
-                              local panScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Pan")
-                              if panScript and panScript:IsA("RemoteFunction") then
-                                  panScript:InvokeServer()
+                              local collectScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Collect")
+                              if collectScript and collectScript:IsA("RemoteFunction") then
+                                  collectScript:InvokeServer(table.unpack({ [1] = 1, [2] = false }))
                               end
                           end
 
-                          while autoFarmEnabled do
+                          local currentVal, maxVal = getPanProgress()
+                          if currentVal and maxVal and currentVal >= maxVal then
+                              Rayfield:Notify({
+                                 Title = "Pan Full",
+                                 Content = "Teleporting to water to wash...",
+                                 Duration = 2,
+                              })
+
+                              HRPRoot.CFrame = waterCords
+                              task.wait(0.2)
+
                               panTool = getPanTool()
                               if panTool then
-                                  local shakeScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Shake")
-                                  if shakeScript and shakeScript:IsA("RemoteEvent") then
-                                      shakeScript:FireServer()
+                                  local panScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Pan")
+                                  if panScript and panScript:IsA("RemoteFunction") then
+                                      panScript:InvokeServer()
                                   end
                               end
 
-                              local cVal = getPanProgress()
-                              if cVal and cVal <= 0 then
-                                  Rayfield:Notify({
-                                     Title = "Pan Empty",
-                                     Content = "Returning to collecting...",
-                                     Duration = 2,
-                                  })
-                                  break
+                              while autoFarmEnabled do
+                                  panTool = getPanTool()
+                                  if panTool then
+                                      local shakeScript = panTool:FindFirstChild("Scripts") and panTool.Scripts:FindFirstChild("Shake")
+                                      if shakeScript and shakeScript:IsA("RemoteEvent") then
+                                          shakeScript:FireServer()
+                                      end
+                                  end
+
+                                  local cVal = getPanProgress()
+                                  if cVal and cVal <= 0 then
+                                      Rayfield:Notify({
+                                         Title = "Pan Empty",
+                                         Content = "Returning to collecting...",
+                                         Duration = 2,
+                                      })
+                                      break
+                                  end
+
+                                  task.wait(0.1)
                               end
 
-                              task.wait(0.1)
+                              if autoSellWhenFullEnabled and isInventoryFull() then
+                                  Rayfield:Notify({
+                                     Title = "Inventory Full",
+                                     Content = "Teleporting to shop to sell...",
+                                     Duration = 3,
+                                  })
+                                  HRPRoot.CFrame = sellCFrame
+                                  task.wait(0.3)
+                                  performSell()
+                                  task.wait(0.5)
+                              end
                           end
                       end
                   end
 
                   task.wait(0.1)
+              end
+          end)
+      end
+   end,
+})
+
+Tab:CreateToggle({
+   Name = "Auto-sell When full",
+   CurrentValue = false,
+   Flag = "AutoSellWhenFullToggle",
+   Callback = function(Value)
+      autoSellWhenFullEnabled = Value
+   end,
+})
+
+Tab:CreateSection("Other")
+
+Tab:CreateToggle({
+   Name = "Auto-sell",
+   CurrentValue = false,
+   Flag = "AutoSellToggle",
+   Callback = function(Value)
+      autoSellEnabled = Value
+
+      if autoSellEnabled then
+          task.spawn(function()
+              while autoSellEnabled do
+                  performSell()
+                  task.wait(1)
               end
           end)
       end

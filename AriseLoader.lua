@@ -3,7 +3,7 @@ local scriptMap = {
     [131756752872026] = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseDiveDown.lua",
     [125003919504672] = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseMyKnifeFarm.lua",
     [119126689474503] = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseBeAStreamer.lua",
-    [129827112113663] = "https://raw.githubcontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseProspecting.lua"
+    [129827112113663] = "https://raw.githubusercontent.com/SubToy0nikos/YoHub/refs/heads/main/AriseProspecting.lua"
 }
 local targetScriptUrl = scriptMap[game.PlaceId]
 if targetScriptUrl then
